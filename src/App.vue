@@ -1,4 +1,46 @@
-<script setup lang="ts"></script>
+<script lang="ts">
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
+import { ref } from 'vue';
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+export default {
+  components: {
+    Swiper,
+    SwiperSlide
+  },
+  setup() {
+    const thumbsSwiper = ref(null);
+
+      const setThumbsSwiper = (swiper:any) => {
+        thumbsSwiper.value = swiper;
+      };
+    return {
+      thumbsSwiper,
+      setThumbsSwiper,
+      modules: [FreeMode, Navigation, Thumbs],
+    }
+  },
+  data() {
+    return {
+      teste: [
+        {
+          url: 'src/assets/pexels-kaique-rocha-775201.jpg' // Corrija o caminho da imagem se necessário
+        },
+        {
+          url: 'src/assets/pexels-senuscape-1658967.jpg'
+        },
+        {
+          url: 'src/assets/pexels-sohail-nachiti-807598.jpg'
+        }
+      ]
+    }
+  }
+}
+</script>
 
 <template>
   <div class="navbar">
@@ -23,37 +65,145 @@
       <button>Idioma</button>
     </div>
   </div>
-  <div class="hero-section">
-    <div class="text-content">
-      <h1>Venha aprender Jogando</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, fugit fugiat harum recusandae totam deleniti cumque exercitationem optio amet saepe repudiandae maxime expedita quis, rerum similique? Ducimus, saepe! Reprehenderit, laudantium.
-      </p>
-      <button class="button-hero" >Aplicar</button>
-    </div>
-      <div class="eco-img-constrution">
-      <img
-        class="folha"
-        width="350px"
-        height="350px"
-        src="@\assets\pngegg.png"
-        alt=""
-      />
-    </div>
-    
+  <div class="home">
+    <swiper class="bg-slider">
+      <swiper-slide v-for="(item, index) in teste" :key="index">
+        <img :src="item.url" alt="" />
+        <div class="text-content">
+          <h2 class="title">Testando <span>Season</span></h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis vero
+            voluptatibus dolorum quos voluptas optio pariatur voluptatum
+            accusantium, fuga adipisci maiores autem, recusandae illo unde
+            nihil! Deleniti doloribus expedita rem.
+          </p>
+          <button class="read-btn">
+            Saiba Mais
+            <font-awesome-icon :icon="['fab', 'square-instagram']" />
+          </button>
+        </div>
+      </swiper-slide>
+    </swiper>
+
+    <swiper
+      @swiper="setThumbsSwiper"
+      :spaceBetween="10"
+      :slidesPerView="4"
+      :freeMode="true"
+      :watchSlidesProgress="true"
+      class="bg-slider-thumbs"
+      :modules="modules"
+    >
+      <swiper-slide v-for="(item, index) in teste" :key="index"
+        ><img :src="item.url"/>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <style scoped>
-
-
-.folha {
-  margin: 20px auto;
-  opacity: 0;
-  animation: drawAnimation 2s ease-in-out forwards;
+.options-info {
+  color: #fff;
 }
+
+.home {
+  min-height: 100vh;
+}
+.bg-slider {
+  z-index: 777;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.bg-slider .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-slider .swiper-slide img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  pointer-events: none;
+}
+
+.swiper-slide .text-content {
+  position: absolute;
+  top: 25%;
+  color: #fff;
+  margin: 0 200px;
+  transition: 0.3s ease;
+}
+
+.swiper-slide .text-content .title {
+  font-size: 4em;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: var(--text-shadow);
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+.swiper-slide-active .text-content .title {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+  transition-property: transform, opacity;
+}
+
+.swiper .text-content .title span {
+  font-size: 0.3em;
+  font-weight: 300;
+}
+
+.swiper-slide .text-content p {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-shadow: var(--text-shadow);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--box-shadow);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transform: translateX(-80px);
+  opacity: 0;
+}
+
+.swiper-slide-active .text-content p {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+}
+
+.swiper-slide .text-content .read-btn {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 8px 25px;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .navbar {
   display: flex;
   background: transparent;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: calc(5rem + 1rem);
 }
 .nav {
   display: flex;
@@ -62,12 +212,7 @@
   gap: 35px;
   margin: auto;
 }
-ul,
-li,
-a {
-  text-decoration: none;
-  list-style: none;
-}
+
 .logo {
   margin-top: 20px;
   margin-left: 25px;
@@ -76,6 +221,7 @@ a {
   display: flex;
   padding-right: 40px;
   gap: 35px;
+  height: calc(5rem + 1rem);
 }
 .action button {
   width: 90px;
@@ -103,9 +249,6 @@ a {
   color: #fff;
 }
 .hero-section {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 100vh;
   width: 100%;
 }
@@ -115,7 +258,6 @@ a {
   flex-direction: column;
   overflow: hidden;
 }
-
 
 .eco-img-constrution .text {
   font-size: 50px;
@@ -141,38 +283,14 @@ a {
   font-weight: 400;
   line-height: 32px;
   margin-bottom: 40px;
-
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+  from {
+    width: 0;
   }
-
-.button-hero {
-  border: 2px solid transparent;
-  height: 40px;
-  width: 120px;
-  border-radius: 8px;
-  color: #000;
-  background-color: yellowgreen;
-  font-size: 15px;
-  transition: all .6s ease;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.button-hero:hover{
-  transform: scale(1.1);
-}
-
-@keyframes drawAnimation {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  to {
+    width: 100%;
   }
-
+}
 </style>
