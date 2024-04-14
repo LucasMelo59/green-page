@@ -1,7 +1,13 @@
 <script lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
-import { ref } from 'vue';
+import {
+  FreeMode,
+  Navigation,
+  Thumbs,
+  Pagination,
+  Autoplay
+} from 'swiper/modules'
+import { ref } from 'vue'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -13,15 +19,15 @@ export default {
     SwiperSlide
   },
   setup() {
-    const thumbsSwiper = ref(null);
+    const thumbsSwiper = ref(null)
 
-      const setThumbsSwiper = (swiper:any) => {
-        thumbsSwiper.value = swiper;
-      };
+    const setThumbsSwiper = (swiper: any) => {
+      thumbsSwiper.value = swiper
+    }
     return {
       thumbsSwiper,
       setThumbsSwiper,
-      modules: [FreeMode, Navigation, Thumbs],
+      modules: [FreeMode, Thumbs, Pagination, Autoplay]
     }
   },
   data() {
@@ -59,6 +65,7 @@ export default {
       <li class="nav-link"><a href="#">Jogo</a></li>
       <li class="nav-link"><a href="#">Sobre</a></li>
       <li class="nav-link"><a href="#">Apoio</a></li>
+      <li class="nav-link"><a href="#">Doações</a></li>
     </ul>
     <div class="action">
       <button>Login</button>
@@ -66,7 +73,19 @@ export default {
     </div>
   </div>
   <div class="home">
-    <swiper class="bg-slider">
+    <swiper
+      :loop="true"
+      :autoplay="{
+        delay: 4500,
+        disableOnInteraction: false
+      }"
+      :pagination="{
+        clickable: true
+      }"
+      :thumbs="{ swiper: thumbsSwiper }"
+      :modules="modules"
+      class="bg-slider"
+    >
       <swiper-slide v-for="(item, index) in teste" :key="index">
         <img :src="item.url" alt="" />
         <div class="text-content">
@@ -79,7 +98,7 @@ export default {
           </p>
           <button class="read-btn">
             Saiba Mais
-            <font-awesome-icon :icon="['fab', 'square-instagram']" />
+            <font-awesome-icon :icon="['fas', 'leaf']" />
           </button>
         </div>
       </swiper-slide>
@@ -87,15 +106,15 @@ export default {
 
     <swiper
       @swiper="setThumbsSwiper"
-      :spaceBetween="10"
-      :slidesPerView="4"
-      :freeMode="true"
+      :loop="true"
+      :slidesPerView="teste.length"
       :watchSlidesProgress="true"
-      class="bg-slider-thumbs"
+      :freeMode="true"
+      class="bg-slider-thumbs thumbs-container"
       :modules="modules"
     >
-      <swiper-slide v-for="(item, index) in teste" :key="index"
-        ><img :src="item.url"/>
+      <swiper-slide class="" v-for="(item, index) in teste" :key="index">
+        <img :src="item.url" />
       </swiper-slide>
     </swiper>
   </div>
@@ -195,6 +214,52 @@ export default {
   margin-top: 40px;
   border-radius: 8px;
   cursor: pointer;
+  transform: translateX(50px);
+  opacity: 0;
+}
+
+.swiper-slide-active .text-content .read-btn {
+  transform: translateX(0);
+  opacity: 1;
+  transition: 1s ease;
+  transition-delay: 0.3s;
+}
+.read-btn:hover {
+  transform: scale(1.1);
+  background-color: #000;
+}
+
+.bg-slider-thumbs {
+  z-index: 777;
+  position: absolute;
+  bottom: 7em;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.thumbs-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px 3px;
+  border-radius: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
+}
+
+.thumbs-container img {
+  width: 50px;
+  height: 35px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.swiper-slide-thumb-active img {
+  border: 1px solid #fff;
+  transform: scale(1.2);
 }
 
 .navbar {
