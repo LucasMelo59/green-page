@@ -75,7 +75,7 @@ export default defineComponent({
 <style>
 /* VC IRÁ TRABALHAR O CSS AQUI DAVID  */
 .wrapper-recentes {
-    background-image: url('src/assets/recent-game-bg.png');
+    background-image: url('@/assets/recent-game-bg.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
