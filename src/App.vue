@@ -4,13 +4,15 @@ import Nav from '@/components/Nav.vue';
 import SectionProduct from '@/components/ProductSection.vue'
 import WrappersCards from "./components/WrappersCards.vue";
 import SecaoRecentes from "./components/SecaoRecentes.vue";
+import GamesRevie from "./components/GamesRevie.vue";
 export default {
   components: {
     Home,
     Nav,
     SectionProduct,
     WrappersCards,
-    SecaoRecentes
+    SecaoRecentes,
+    GamesRevie
   },
   setup() {
    
@@ -28,6 +30,7 @@ export default {
   <!-- <SectionProduct></SectionProduct> -->
   <WrappersCards></WrappersCards>
   <SecaoRecentes></SecaoRecentes>
+  <GamesRevie></GamesRevie>
   <div class="about section">
 
   </div>

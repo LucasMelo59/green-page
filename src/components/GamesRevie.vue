@@ -14,7 +14,7 @@ import Slider from 'primevue/slider';
 import InputText from 'primevue/inputtext';
 
 export default defineComponent({
-    name: 'SecaoRecentes',
+    name: 'GamesReview',
     data() {
         return {
 
@@ -42,27 +42,34 @@ export default defineComponent({
 })
 </script>
 <template>
-    <div class="container-recentes wrapper-recentes">
+    <div class="container-recentes wrapper-review">
         <div class="title">
-            <h1>Games Recentes</h1>
+            <h1>Jogos mais vistos</h1>
         </div>
         <div class="row">
             <div class="cards">
-                <img src="@/assets/1.jpg" class="recentes-card" alt="">
+                <img src="@/assets/4.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/2.jpg" class="recentes-card" alt="">
+                <img src="@/assets/5.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/3.jpg" class="recentes-card" alt="">
+                <img src="@/assets/6.jpg" class="recentes-card" alt="">
+                <div class="content">
+                    <h5>Suspendisse ut justo tem por, rutrum</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
+                </div>
+            </div>
+            <div class="cards">
+                <img src="@/assets/7.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
@@ -74,11 +81,8 @@ export default defineComponent({
 
 <style>
 /* VC IRÁ TRABALHAR O CSS AQUI DAVID  */
-.wrapper-recentes {
-    background-image: url('src/assets/recent-game-bg.png');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
+.wrapper-review {
+    background-color: #fff;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -108,6 +112,7 @@ export default defineComponent({
     font-size: 14px;
     color: #878787;
     line-height: 2;
+    text-align: center;
 }
 
 img {
