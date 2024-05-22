@@ -48,21 +48,21 @@ export default defineComponent({
         </div>
         <div class="row">
             <div class="cards">
-                <img src="@/assets/1.jpg" class="recentes-card" alt="">
+                <img src="/assets/1.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/2.jpg" class="recentes-card" alt="">
+                <img src="/assets/2.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/3.jpg" class="recentes-card" alt="">
+                <img src="/assets/3.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
@@ -75,7 +75,7 @@ export default defineComponent({
 <style>
 /* VC IRÁ TRABALHAR O CSS AQUI DAVID  */
 .wrapper-recentes {
-    background-image: url('@/assets/recent-game-bg.png');
+    background-image: url('/assets/recent-game-bg.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;

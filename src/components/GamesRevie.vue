@@ -48,28 +48,28 @@ export default defineComponent({
         </div>
         <div class="row">
             <div class="cards">
-                <img src="@/assets/4.jpg" class="recentes-card" alt="">
+                <img src="/assets/4.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/5.jpg" class="recentes-card" alt="">
+                <img src="/assets/5.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/6.jpg" class="recentes-card" alt="">
+                <img src="/assets/6.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>
                 </div>
             </div>
             <div class="cards">
-                <img src="@/assets/7.jpg" class="recentes-card" alt="">
+                <img src="/assets/7.jpg" class="recentes-card" alt="">
                 <div class="content">
                     <h5>Suspendisse ut justo tem por, rutrum</h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit amet, consectetur elit. </p>

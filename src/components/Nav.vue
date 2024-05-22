@@ -33,7 +33,7 @@ export default defineComponent({
 <div class="navbar" :class="{ 'sticky': isScrolled }">
     <a href="#" class="logo">
       <img
-        src="@\assets\kisspng-leaf-logo-green-leaves-5ab4681eb98b34.54704653152177257476.png"
+        src="/assets/kisspng-leaf-logo-green-leaves-5ab4681eb98b34.54704653152177257476.png"
         width="40px"
         height="40px"
         alt=""
