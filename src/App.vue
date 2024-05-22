@@ -3,12 +3,14 @@ import Home from "@/views/Home.vue";
 import Nav from '@/components/Nav.vue';
 import SectionProduct from '@/components/ProductSection.vue'
 import WrappersCards from "./components/WrappersCards.vue";
+import SecaoRecentes from "./components/SecaoRecentes.vue";
 export default {
   components: {
     Home,
     Nav,
     SectionProduct,
-    WrappersCards
+    WrappersCards,
+    SecaoRecentes
   },
   setup() {
    
@@ -25,6 +27,7 @@ export default {
   <Home></Home>
   <!-- <SectionProduct></SectionProduct> -->
   <WrappersCards></WrappersCards>
+  <SecaoRecentes></SecaoRecentes>
   <div class="about section">
 
   </div>
