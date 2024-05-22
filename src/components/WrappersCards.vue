@@ -49,7 +49,7 @@ export default defineComponent({
 })
 </script>
 <template>
-   <div class="opa">
+   <!-- <div class="opa">
         Ultimas Noticias
     </div>
     
@@ -61,9 +61,40 @@ export default defineComponent({
             <div class="carousel-item">Frase 4: Acredite em si mesmo.</div>
             <div class="carousel-item">Frase 5: O sucesso está próximo.</div>
         </div>
+    </div> -->
+    <div class="container-wrapper">
+      <div class="box-images">
+        <div class="imgs" style="background-image: url(https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt60f5d7e2095fa266/65556d537c884ff9070fc7bf/112023_SN24-GameplaySpotlight-Banner.jpg?width=1500&quality=50);">
+          <div class="separacao"></div>  
+          <div class="overlay">
+                <h2>Suspendisse ut justo tem por, rutrum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="imgs" style="background-image: url(https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt60f5d7e2095fa266/65556d537c884ff9070fc7bf/112023_SN24-GameplaySpotlight-Banner.jpg?width=1500&quality=50);">
+          <div class="separacao"></div>    
+          <div class="overlay">
+                <h2>Suspendisse ut justo tem por, rutrum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="imgs" style="background-image: url(https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt60f5d7e2095fa266/65556d537c884ff9070fc7bf/112023_SN24-GameplaySpotlight-Banner.jpg?width=1500&quality=50);">
+          <div class="separacao"></div>    
+          <div class="overlay">
+                <h2>Suspendisse ut justo tem por, rutrum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="imgs" style="background-image: url(https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt60f5d7e2095fa266/65556d537c884ff9070fc7bf/112023_SN24-GameplaySpotlight-Banner.jpg?width=1500&quality=50);">
+            <div class="overlay">
+                <h2>Suspendisse ut justo tem por, rutrum</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+      </div>
     </div>
 
-    <div class="rectangle">
+    <!-- <div class="rectangle">
         <div class="division" style="background-image: url(https://liquipedia.net/commons/images/9/99/League_Infobox_Thresh.jpg);">
             <div class="overlay">
                 <h2>Título 1</h2>
@@ -88,7 +119,7 @@ export default defineComponent({
                 <p>Descrição 4</p>
             </div>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <style>
@@ -97,7 +128,25 @@ export default defineComponent({
   height: 100vh;
 }
 
+.container-wrapper {
+  width: 100%;
+  height: 100vh;
+}
 
+.imgs {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 415px;
+  width: 350px;
+}
+
+.box-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
 .opa {
     width: 20%;
@@ -169,8 +218,11 @@ export default defineComponent({
 .overlay {
     background: rgba(0, 0, 0, 0.5);
     color: white;
-    padding: 60px;
-    text-align: center;
+    padding: 50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 h2 {
