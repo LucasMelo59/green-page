@@ -3,6 +3,10 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
+import "primevue/resources/themes/saga-blue/theme.css";
+import "primevue/resources/primevue.min.css";
+
+
 import PrimeVue from 'primevue/config';
 import { createApp } from 'vue'
 import App from './App.vue'

@@ -10,6 +10,8 @@ import {
   Autoplay
 } from 'swiper/modules'
 import { ref } from 'vue'
+import Slider from 'primevue/slider';
+import InputText from 'primevue/inputtext';
 
 export default defineComponent({
   name: 'WrapperCards',
@@ -27,17 +29,20 @@ export default defineComponent({
         }
       ],
       cities: [
-    { name: 'New York', code: 'NY' },
-    { name: 'Rome', code: 'RM' },
-    { name: 'London', code: 'LDN' },
-    { name: 'Istanbul', code: 'IST' },
-    { name: 'Paris', code: 'PRS' }
-]
+        { name: 'New York', code: 'NY' },
+        { name: 'Rome', code: 'RM' },
+        { name: 'London', code: 'LDN' },
+        { name: 'Istanbul', code: 'IST' },
+        { name: 'Paris', code: 'PRS' }
+      ],
+      value: ref(50)
     }
   },
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    Slider,
+    InputText
   },
   setup() {
     const thumbsSwiper = ref(null)
@@ -57,9 +62,13 @@ export default defineComponent({
 <template>
   <div class="wrapper">
     <!-- VC IRÁ TRABALHAR O HTML AQUI DAVID -->
+    
   </div>
 </template>
 
 <style>
-     /* VC IRÁ TRABALHAR O CSS AQUI DAVID  */
+/* VC IRÁ TRABALHAR O CSS AQUI DAVID  */
+.wrapper {
+  height: 100vh;
+}
 </style>
