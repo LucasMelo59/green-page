@@ -25,7 +25,14 @@ export default defineComponent({
         {
           url: 'src/assets/pexels-sohail-nachiti-807598.jpg'
         }
-      ]
+      ],
+      cities: [
+    { name: 'New York', code: 'NY' },
+    { name: 'Rome', code: 'RM' },
+    { name: 'London', code: 'LDN' },
+    { name: 'Istanbul', code: 'IST' },
+    { name: 'Paris', code: 'PRS' }
+]
     }
   },
   components: {
@@ -71,6 +78,7 @@ export default defineComponent({
         tempora sequi aperiam necessitatibus nemo in inventore itaque provident
         totam, voluptatum commodi.
       </p>
+      <Slider  class="w-14rem" />
     </div>
     <div class="right-game-box">
       <swiper

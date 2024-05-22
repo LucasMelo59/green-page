@@ -2,11 +2,13 @@
 import Home from "@/views/Home.vue";
 import Nav from '@/components/Nav.vue';
 import SectionProduct from '@/components/ProductSection.vue'
+import WrappersCards from "./components/WrappersCards.vue";
 export default {
   components: {
     Home,
     Nav,
-    SectionProduct
+    SectionProduct,
+    WrappersCards
   },
   setup() {
    
@@ -21,7 +23,8 @@ export default {
 <template>
   <Nav></Nav>
   <Home></Home>
-  <SectionProduct></SectionProduct>
+  <!-- <SectionProduct></SectionProduct> -->
+  <WrappersCards></WrappersCards>
   <div class="about section">
 
   </div>

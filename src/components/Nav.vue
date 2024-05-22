@@ -1,5 +1,6 @@
 <script lang="ts">
 import { defineComponent } from "vue";
+import { ref } from "vue";
 
 
 export default defineComponent({
@@ -104,7 +105,6 @@ export default defineComponent({
   color: #fff;
 }
 .navbar.sticky{
-  height: calc(2.5rem + 1rem);
   background-color: black;
   /* background-color: rgba(255, 255, 255, 0.1); */
   backdrop-filter: blur(20px);
