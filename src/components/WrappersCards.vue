@@ -17,17 +17,6 @@ export default defineComponent({
   name: 'WrapperCards',
   data() {
     return {
-      teste: [
-        {
-          url: 'src/assets/pexels-kaique-rocha-775201.jpg' // Corrija o caminho da imagem se necessário
-        },
-        {
-          url: 'src/assets/pexels-senuscape-1658967.jpg'
-        },
-        {
-          url: 'src/assets/pexels-sohail-nachiti-807598.jpg'
-        }
-      ],
       cities: [
         { name: 'New York', code: 'NY' },
         { name: 'Rome', code: 'RM' },
