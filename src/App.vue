@@ -25,14 +25,10 @@ export default {
 </script>
 
 <template>
-  <Nav></Nav>
-  <Home></Home>
-  <!-- <SectionProduct></SectionProduct> -->
-  <WrappersCards></WrappersCards>
-  <SecaoRecentes></SecaoRecentes>
-  <GamesRevie></GamesRevie>
+  
   <div class="about section">
-
+    <Nav></Nav>
+    <router-view></router-view>
   </div>
 </template>
 

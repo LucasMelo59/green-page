@@ -41,9 +41,21 @@ export default defineComponent({
     </a>
 
     <ul class="nav">
-      <li class="nav-link active"><a href="#">Inicio</a></li>
-      <li class="nav-link"><a href="#">Jogo</a></li>
-      <li class="nav-link"><a href="#">Sobre</a></li>
+      <li class="nav-link active" router-liun >
+        <a href="#">
+          <router-link to="/">Inicio</router-link>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a href="#">
+          <router-link to="/comunidade">Comunidade</router-link>
+        </a>
+      </li>
+      <li class="nav-link">
+        <a href="#">
+          <router-link to="/about">Sobre</router-link>
+        </a>
+      </li>
       <li class="nav-link"><a href="#">Apoio</a></li>
       <li class="nav-link"><a href="#">Doações</a></li>
     </ul>
